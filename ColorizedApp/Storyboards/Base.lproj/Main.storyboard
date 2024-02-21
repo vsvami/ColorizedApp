@@ -131,17 +131,17 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffI-mB-X0n">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXV-yB-Xg1">
                                                 <rect key="frame" x="0.0" y="42" width="50" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UOL-1E-lFE">
                                                 <rect key="frame" x="0.0" y="84" width="50" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -182,11 +182,14 @@
                     <connections>
                         <outlet property="blueLabel" destination="KBM-h0-PQQ" id="vbN-hW-D0V"/>
                         <outlet property="blueSlider" destination="KV4-Ax-L8e" id="fLd-FX-rJS"/>
+                        <outlet property="blueTextField" destination="UOL-1E-lFE" id="a1N-Wb-Kfw"/>
                         <outlet property="colorView" destination="PFU-GM-cPO" id="o2O-Ws-QC9"/>
                         <outlet property="greenLabel" destination="it2-tF-NG8" id="IDk-hK-VlJ"/>
                         <outlet property="greenSlider" destination="Bsa-Ov-vrq" id="Cjm-bS-7Yr"/>
+                        <outlet property="greenTextField" destination="lXV-yB-Xg1" id="Sj7-BT-Z0u"/>
                         <outlet property="redLabel" destination="10v-ka-jOM" id="5Dh-jQ-zKv"/>
                         <outlet property="redSlider" destination="wVv-67-F06" id="D2C-i0-JXh"/>
+                        <outlet property="redTextField" destination="ffI-mB-X0n" id="2c3-ze-uCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
