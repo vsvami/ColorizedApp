@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreImage
 
 final class SettingColorViewController: UIViewController {
 
@@ -27,14 +28,10 @@ final class SettingColorViewController: UIViewController {
     
     weak var delegate: SettingColorViewControllerDelegate?
     
-    private var red: CGFloat = 0
-    private var green: CGFloat = 0
-    private var blue: CGFloat = 0
-    private var alpha: CGFloat = 0
+    private var currentColor: CIColor!
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
         
         colorView.layer.cornerRadius = 20
         
@@ -46,9 +43,9 @@ final class SettingColorViewController: UIViewController {
         greenLabel.text = string(from: greenSlider)
         blueLabel.text = string(from: blueSlider)
         
-        redTextField.text = "\(redSlider.value)"
-        greenTextField.text = "\(greenSlider.value)"
-        blueTextField.text = "\(blueSlider.value)"
+        redTextField.text = string(from: redSlider)
+        greenTextField.text = string(from: greenSlider)
+        blueTextField.text = string(from: blueSlider)
         
         redTextField.delegate = self
         greenTextField.delegate = self
@@ -77,13 +74,13 @@ final class SettingColorViewController: UIViewController {
     }
     
     private func getColor() {
-        backgroundColor?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        currentColor = CIColor(color: backgroundColor)
     }
     
     private func setSlider() {
-        redSlider.value = red.float()
-        greenSlider.value = green.float()
-        blueSlider.value = blue.float()
+        redSlider.value = currentColor.red.float()
+        greenSlider.value = currentColor.green.float()
+        blueSlider.value = currentColor.blue.float()
     }
     
     private func setColor() {
@@ -91,7 +88,7 @@ final class SettingColorViewController: UIViewController {
             red: redSlider.value.cgFloat(),
             green: greenSlider.value.cgFloat(),
             blue: blueSlider.value.cgFloat(),
-            alpha: alpha
+            alpha: currentColor.alpha
         )
     }
     
